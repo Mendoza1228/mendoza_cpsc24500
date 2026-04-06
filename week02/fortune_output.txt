@@ -4,3 +4,21 @@ Favorite Color: pink
 Lucky Number: 4
 Fortune Category: pink Adventure and New Experiences
 Fortune: A financial opportunity will present itself, but be cautious and do your research.
+Name: Noah Mendoza
+Age: 11
+Favorite Color: black
+Lucky Number: 7
+Fortune Category: black Prosperity and Success
+Fortune: The energy will bring you clarity and insight in a difficult situation.
+Name: CJ
+Age: 35
+Favorite Color: red
+Lucky Number: 7
+Fortune Category: red Prosperity and Success
+Fortune: Your aura will attract positive energy and new opportunities.
+Name: Rudy Mendoza
+Age: 49
+Favorite Color: grey
+Lucky Number: 10
+Fortune Category: grey Prosperity and Success
+Fortune: A surprise encounter will lead to a valuable friendship.
