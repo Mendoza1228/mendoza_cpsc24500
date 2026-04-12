@@ -59,7 +59,9 @@ def main():
                 order.remove_item(rem_index)
         elif choice == "4":
             print(order)
-            print("Thank you for your order!")
+            print("*" * 40)
+            print(f"Thank you for your order, {order.customer_name}!")
+            print("*" * 40)
             break
         else:
             print("Invalid choice. Please try again.")

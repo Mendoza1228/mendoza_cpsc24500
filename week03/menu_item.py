@@ -1,8 +1,8 @@
 
 print()
-print("*" * 30)
-print(f"{'STARLIGHT COFFEE POS':^30}")
-print("*" * 30)
+print("*" * 40)
+print(f"{'STARLIGHT COFFEE POS':^40}")
+print("*" * 40)
 
 class MenuItem:
     # Initialize a menu item with its name, size, base price, and size upcharge

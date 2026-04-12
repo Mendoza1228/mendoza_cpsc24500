@@ -35,6 +35,7 @@ class Order:
     # Return a string representation of the order, including item details and total price
     def __str__(self):
         receipt = f"---Starlight Coffee POS ---\n"
+        
         receipt = f"\n--- {self.customer_name}'s Receipt ---\n"
     
         for i, item in enumerate(self.items, 1):
