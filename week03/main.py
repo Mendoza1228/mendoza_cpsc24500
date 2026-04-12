@@ -7,6 +7,7 @@ from order import Order
 
 def main():
     print("Starlight Coffee POS System")
+    print("=" * 40)
     customer_name = input("Enter your name: ")
     order = Order(customer_name)
     
