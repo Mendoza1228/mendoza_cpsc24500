@@ -1,5 +1,13 @@
 PAYROLL REPORT
 ==================================================
+Employee: Alice Johnson  , ID: E001      , Hourly Rate: $45.00 , Hours Worked: 42.5  , Gross Pay: $ 1968.75
+Employee: Bob Smith      , ID: E002      , Hourly Rate: $38.00 , Hours Worked: 40.0  , Gross Pay: $ 1520.57
+Employee: Carol Davis    , ID: E003      , Hourly Rate: $32.00 , Hours Worked: 38.5  , Gross Pay: $ 1232.00
+Employee: David Lee      , ID: E004      , Hourly Rate: $50.00 , Hours Worked: 45.0  , Gross Pay: $ 2375.00
+Employee: Eva Martinez   , ID: E005      , Hourly Rate: $35.00 , Hours Worked: 41.0  , Gross Pay: $ 1452.50
+Employee: Frank Wilson   , ID: E006      , Hourly Rate: $28.00 , Hours Worked: 40.0  , Gross Pay: $ 1120.00
+Employee: Grace Chen     , ID: E007      , Hourly Rate: $30.00 , Hours Worked: 43.0  , Gross Pay: $ 1335.00
+Employee: Henry Brown    , ID: E008      , Hourly Rate: $33.00 , Hours Worked: 37.5  , Gross Pay: $ 1237.50
 
 SUMMARY
-Total Payroll: $0.00
+Total Payroll: $12241.32
