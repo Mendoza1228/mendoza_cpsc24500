@@ -8,6 +8,14 @@ class PayrollProcessor:
     @property
     def employees(self):
         return list(self._employees)
+    @employees.setter
+    def employees(self, value):
+        if not isinstance(value, list):
+            raise ValueError("Employees must be a list.")
+        for emp in value:
+            if not isinstance(emp, Employee):
+                raise ValueError("All items in employees must be Employee instances.")
+        self._employees = value
     
     def load_from_file(self,filename):
         try:

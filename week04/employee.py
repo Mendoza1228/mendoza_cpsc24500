@@ -11,9 +11,10 @@ class Employee:
 
     @name.setter
     def name(self, value):
-        if not value:
+        stripped = value.strip()
+        if not stripped:
             raise ValueError("Name cannot be empty.")
-        self._name = value.strip()
+        self._name = stripped
 
     @property
     def employee_id(self):
@@ -21,9 +22,10 @@ class Employee:
 
     @employee_id.setter
     def employee_id(self, value):
-        if not value:
+        stripped = value.strip()
+        if not stripped:
             raise ValueError("Employee ID cannot be empty.")
-        self._employee_id = value.strip()
+        self._employee_id = stripped
 
     @property
     def hourly_rate(self):
@@ -48,11 +50,12 @@ class Employee:
         self._hours_worked = value
 
     def calculate_gross_pay(self):
-        if self.hours_worked > 40:
-            regular_pay = 40 * self.hourly_rate
-            overtime_pay = (self.hours_worked - 40) * self.hourly_rate * 1.5
-            return regular_pay + overtime_pay
-        return self.hours_worked * self.hourly_rate
+        if self.hours_worked <= 40:
+            return self.hours_worked * self.hourly_rate
+        overtime = self.hours_worked - 40
+        return (40 * self.hourly_rate) + (overtime * self.hourly_rate * 1.5)
+
+        
     
     def __str__(self):
         return f"Employee: {self.name:<15}, ID: {self.employee_id:<10}, Hourly Rate: ${self.hourly_rate:<6.2f}, Hours Worked: {self.hours_worked:<6.1f}, Gross Pay: ${self.calculate_gross_pay():8.2f}"
