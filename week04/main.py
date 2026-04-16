@@ -5,6 +5,7 @@ from payroll_report import PayrollReport
 def main():
     processor = PayrollProcessor()
     processor.load_from_file("employees.txt")
+
     report = PayrollReport(processor)
 
     while True:
