@@ -58,4 +58,5 @@ class Employee:
         
     
     def __str__(self):
+        
         return f"Employee: {self.name:<15}, ID: {self.employee_id:<10}, Hourly Rate: ${self.hourly_rate:<6.2f}, Hours Worked: {self.hours_worked:<6.1f}, Gross Pay: ${self.calculate_gross_pay():8.2f}"
