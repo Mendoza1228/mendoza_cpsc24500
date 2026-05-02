@@ -15,10 +15,6 @@ class Circle(Shape):
     
     def describe(self) -> str:
         return f"Circle with radius {self.radius:.1f}"
-if __name__ == "__main__":
-    circle = Circle(5)
-    print(circle.describe())
-    print(f"Area: {circle.area():.2f}")
-    print(f"Perimeter: {circle.perimeter():.2f}")
+
 
     
