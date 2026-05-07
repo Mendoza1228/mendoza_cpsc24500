@@ -46,12 +46,10 @@ class WordCollection:
         return iter(self._words)
     
     def __repr__(self):
-        return f"WordCollection with {len(self._words)} words"
+        return f"WordCollection ({len(self._words)} words)"
     
-    if __name__ == "__main__":
-        collection = WordCollection.from_file('words.txt')
-        print(collection)
-    
+           
+               
 
                                 
 

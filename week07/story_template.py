@@ -11,11 +11,21 @@ class StoryTemplate:
     @property
     def name(self):
         return self._name
+    @name.setter
+    def name(self, value):
+        if not isinstance(value, str):
+            raise ValueError("Name must be a string.")
+        self._name = value
     
     @property
     def pattern(self):
         return self._pattern
-    
+    @pattern.setter
+    def pattern(self, value):
+        if not isinstance(value, list):
+            raise ValueError("Pattern must be a list.")
+        self._pattern = value
+
     def generate(self, word_collection):
         sentence = []
         for token in self.pattern:
@@ -37,6 +47,6 @@ class StoryTemplate:
 
 TEMPLATES = [
     StoryTemplate("Adventure", ["The", "{adjective}", "{noun}", "{verb}", "{preposition}", "the", "{adjective}", "{noun}"]),
-        StoryTemplate("Mystery", ["In the", "{adjective}", "{noun}", "was", "{verb}", "by the", "{adjective}", "{noun}"]),
-        StoryTemplate("Comedy", ["Why did the", "{adjective}", "{noun}", "{verb}", "the", "{adjective}", "{noun}?"]),
+    StoryTemplate("Mystery", ["In the", "{adjective}", "{noun}", "was", "{verb}", "by the", "{adjective}", "{noun}"]),
+    StoryTemplate("Comedy", ["Why did the", "{adjective}", "{noun}", "{verb}", "the", "{adjective}", "{noun}?"]),
     ]
