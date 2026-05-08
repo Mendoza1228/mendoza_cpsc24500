@@ -10,7 +10,9 @@ def main():
 
 
     file_path = input("Enter the path to your word collection file: ")
+    
     words = WordCollection.from_file(file_path)
+   
 
     
 
@@ -22,7 +24,7 @@ def main():
     print(f"Loaded {len(words)} words:")
     for pos in sorted(list(set(word.part_of_speech for word in words))):
         count = len(words.filter_by_pos(pos))
-        print(f"- {pos}: {count}")
+        print(f"{pos}: {count}")
 
 
     while True:

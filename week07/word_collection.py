@@ -14,7 +14,7 @@ class WordCollection:
                     parts = line.strip().split(',')
                     if len(parts) == 2:
                         try:
-                            collection.words.append(Word(parts[0], parts[1]))
+                            collection._words.append(Word(parts[0], parts[1]))
                         except ValueError:
                             continue #kip lines with invalid word types
         except FileNotFoundError:
@@ -25,7 +25,7 @@ class WordCollection:
     def add(self, word):
         if not isinstance(word, Word):
             raise TypeError("Only Word instances can be added to the collection.")
-        self.words.append(word)
+        self._words.append(word)
 
     def filter_by_pos(self, part_of_speech):
         new_col = WordCollection()
