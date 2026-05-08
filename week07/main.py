@@ -1,5 +1,6 @@
 from word_collection import WordCollection
 from story_template import TEMPLATES
+ 
 
 
 def main():
@@ -8,8 +9,9 @@ def main():
     print("===========================================")
 
 
-    file_path = input("Enter the path to your word collection file:")
+    file_path = input("Enter the path to your word collection file: ")
     words = WordCollection.from_file(file_path)
+
     
 
     if len(words) == 0:
