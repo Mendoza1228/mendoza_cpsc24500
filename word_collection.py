@@ -5,10 +5,10 @@ class WordCollection:
         self._words = []
 
     @classmethod
-    def from_file(cls, filepath):
+    def from_file(cls, filename):
         collection = cls()
         try:
-            with open(filepath, 'r') as f:
+            with open(filename, 'r') as f:
                 for line in f:
                     parts = line.strip().split()
                     if len(parts) == 2:
@@ -17,7 +17,7 @@ class WordCollection:
                         except ValueError:
                             continue
         except FileNotFoundError:
-            print(f"Error: {filepath} not found.")
+            print(f"Error: {filename} not found.")
         return collection
 
     def add(self, word):
