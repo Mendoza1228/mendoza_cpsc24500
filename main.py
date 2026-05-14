@@ -36,7 +36,7 @@ def main():
 
     while True:
         view.display_menu()
-        choice = input ("Enter choice: ")
+        choice = input("Enter choice: ")
 
 
         try:
