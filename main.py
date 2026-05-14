@@ -11,9 +11,9 @@ def load_data(filename, catalog):
         for line in f:
             parts = line.strip().split('\t')
             if len(parts) == 7:
-                item_type, title, author, year, extra1, extra2, checked_out = parts
-                is_out = checked_out.lower() == 'true'
-                item = ItemFactory.create_item(item_type, title, author, year, extra1, extra2, is_out)
+                item_type, title, author, year, ex1, ex2, status = parts
+                is_out = status.lower() == 'true'
+                item = ItemFactory.create_item(item_type, title, author, year, ex1, ex2, is_out)
                 catalog.add_item(item)
                 count += 1
     return count
@@ -22,22 +22,21 @@ def save_data(filename, catalog):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, 'w') as f:
         for i in catalog.get_all_items():
-            status = str(i.is_checked_out).lower()
+            status = str(i.checked_out).lower()
+            # Note: Book/DVD/Mag classes need access to extra fields for saving
             f.write(f"{i.get_item_type()}\t{i.title}\t{i.author}\t{i.year}\t{i.extra1}\t{i.extra2}\t{status}\n")
-
 
 def main():
     catalog = Catalog()
     view = CatalogView()
     file_path = "data/catalog.tsv"
-
+    
     loaded = load_data(file_path, catalog)
     view.display_message(f"Catalog loaded: {loaded} items.")
 
     while True:
         view.display_menu()
-        choice = input("Enter choice: ")
-
+        choice = input ("Enter choice: ")
 
         try:
             if choice == '1':
@@ -71,7 +70,7 @@ def main():
                 year = input("Year: ")
                 ex1 = input("Extra field 1 (ISBN/Runtime/Issue): ")
                 ex2 = input("Extra field 2 (Pages/Rating/Month): ")
-                new_item = ItemFactory.ItemFactory.create_item(itype, title, author, year, ex1, ex2)
+                new_item = ItemFactory.create_item(itype, title, author, year, ex1, ex2)
                 catalog.add_item(new_item)
                 view.display_message(f"Added: {title}")
             elif choice == '7':
@@ -86,10 +85,6 @@ def main():
             view.display_message(f"Error: {e}")
         except Exception as e:
             view.display_message(f"Unexpected error: {e}")
-
-def new_func(view):
-    choice = view.get_user_input("Enter choice: ")
-    return choice
 
 if __name__ == "__main__":
     main()
