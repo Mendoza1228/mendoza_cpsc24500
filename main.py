@@ -23,7 +23,7 @@ def save_data(filename, catalog):
     with open(filename, 'w') as f:
         for i in catalog.get_all_items():
             status = str(i.checked_out).lower()
-            # Note: Book/DVD/Mag classes need access to extra fields for saving
+            
             f.write(f"{i.get_item_type()}\t{i.title}\t{i.author}\t{i.year}\t{i.extra1}\t{i.extra2}\t{status}\n")
 
 def main():

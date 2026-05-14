@@ -8,16 +8,13 @@ class Book(LibraryItem):
 
     def get_item_type(self):
         return "Book"
-    
+
     def __str__(self):
-        return f"{super().__str__()} - ISBN: {self._isbn}, Pages: {self._page_count}"
-    
+        return f"{super().__str__()} | ISBN: {self._isbn}, Pages: {self._page_count}"
+
     @property
-    def extra1(self):
-        return self._isbn
-    
+    def extra1(self): return self._isbn
     @property
-    def extra2(self):
-        return self._page_count
+    def extra2(self): return self._page_count
     
     
